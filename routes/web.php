@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StaffController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/staff', function () {
+//     return view('staff.create');
+// });
+
+// Route::get('/all_staff', function () {
+//     return view('staff.index');
+// });
+
+Route::get('/staff/index', [StaffController::class, 'index'])->name('staff.index');
+
+// routes/web.php
+Route::get('/staff/create', [StaffController::class, 'create'])->name('staff.create');
+Route::post('/staff/store', [StaffController::class, 'store'])->name('staff.store');
