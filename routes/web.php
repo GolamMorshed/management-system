@@ -14,9 +14,9 @@ use App\Http\Controllers\StaffController;
 |
 */
 
-// Route::get('/staff', function () {
-//     return view('staff.create');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Route::get('/all_staff', function () {
 //     return view('staff.index');
@@ -28,4 +28,8 @@ use App\Http\Controllers\StaffController;
 // Route::get('/staff/create', [StaffController::class, 'create'])->name('staff.create');
 // Route::post('/staff/store', [StaffController::class, 'store'])->name('staff.store');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/staff', StaffController::class);
