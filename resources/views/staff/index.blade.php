@@ -8,6 +8,14 @@
 <body>
     @foreach ($staffs as $staff)
         <p>{{$staff->first_name}}</p>
+        <p>
+            @can('isAdmin')
+            <a href="{{ route('staff.edit', ['staff' => $staff]) }}">
+                <button>Edit</button>
+            </a>
+            @endcan
+            
+        </p>
     @endforeach
 </body>
 </html>

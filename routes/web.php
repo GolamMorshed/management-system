@@ -22,8 +22,10 @@ use App\Http\Controllers\StaffController;
 //     return view('staff.index');
 // });
 
-Route::get('/staff/index', [StaffController::class, 'index'])->name('staff.index');
 
-// routes/web.php
-Route::get('/staff/create', [StaffController::class, 'create'])->name('staff.create');
-Route::post('/staff/store', [StaffController::class, 'store'])->name('staff.store');
+// // routes/web.php
+// Route::get('/staff/index', [StaffController::class, 'index'])->name('staff.index');
+// Route::get('/staff/create', [StaffController::class, 'create'])->name('staff.create');
+// Route::post('/staff/store', [StaffController::class, 'store'])->name('staff.store');
+
+Route::resource('/staff', StaffController::class);
